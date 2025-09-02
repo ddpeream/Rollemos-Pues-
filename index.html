@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rollemos Pues!!! — Inicio</title>
+    <meta name="description" content="Rollemos Pues!!! — Comunidad de patinaje: explora patinadores, parches, spots y eventos." />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rollemos Pues!!!" />
+    <meta property="og:description" content="Explora patinadores, parches y spots en tu ciudad." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512359243361-6020f0f2c8f6?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rollemos Pues!!!" />
+    <meta name="twitter:description" content="Explora patinadores, parches y spots en tu ciudad." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512359243361-6020f0f2c8f6?q=80&w=1200&auto=format&fit=crop" />
+
+  <link rel="icon" href="assets/img/placeholders/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/placeholders/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <nav class="navbar container" role="navigation" aria-label="Navegación principal">
+        <a class="brand" href="index.html" aria-label="Inicio">Rollemos Pues!!!</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+          <i class="ri-menu-3-line" aria-hidden="true"></i>
+        </button>
+        <div id="nav-menu" class="nav-menu">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="skaters.html">Patinadores</a>
+          <a class="nav-link" href="parches.html">Parches</a>
+          <a class="nav-link" href="spots.html">Spots</a>
+          <a class="nav-link" href="galeria.html">Galería</a>
+          <button id="theme-toggle" class="btn ghost" aria-label="Cambiar tema"><i class="ri-contrast-line"></i></button>
+          <div class="nav-search" role="search">
+            <label class="visually-hidden" for="nav-search-input">Buscar</label>
+            <input id="nav-search-input" type="search" placeholder="Buscar..." aria-label="Buscar" />
+            <button class="btn ghost" id="nav-search-btn" aria-label="Ejecutar búsqueda">
+              <i class="ri-search-line" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+      <!-- Hero -->
+      <section class="hero container reveal" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title" class="title-xl">Patina la ciudad con estilo</h1>
+          <p class="lead">Explora patinadores, parches y spots. Descubre rutas, eventos y vibra con la comunidad.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="skaters.html">Explorar patinadores</a>
+            <a class="btn" href="spots.html">Ver spots</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="glass card p-0 overflow-hidden" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1512359243361-6020f0f2c8f6?q=80&w=1200&auto=format&fit=crop" alt="" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Qué puedes hacer -->
+      <section class="container section reveal">
+        <h2 class="title-lg">Qué puedes hacer</h2>
+        <div class="grid three">
+          <div class="card glass">
+            <i class="ri-user-star-line icon"></i>
+            <h3>Conectar</h3>
+            <p>Encuentra riders por ciudad, disciplina y nivel.</p>
+          </div>
+          <div class="card glass">
+            <i class="ri-team-line icon"></i>
+            <h3>Unirte</h3>
+            <p>Descubre parches y horarios para rodar.</p>
+          </div>
+          <div class="card glass">
+            <i class="ri-map-pin-line icon"></i>
+            <h3>Explorar</h3>
+            <p>Spots y parques favoritos de la comunidad.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Carrusel -->
+      <section class="container section reveal">
+        <h2 class="title-lg">Momentos en ruedas</h2>
+        <div class="carousel" data-carousel data-autoplay="true">
+          <button class="carousel-btn prev" aria-label="Anterior"><i class="ri-arrow-left-s-line"></i></button>
+          <div class="carousel-track">
+            <img src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?q=80&w=1200&auto=format&fit=crop" alt="Rider en salto" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Rodada nocturna" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=1200&auto=format&fit=crop" alt="Parque de skate" loading="lazy" />
+          </div>
+          <button class="carousel-btn next" aria-label="Siguiente"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+      </section>
+
+      <!-- Destacados -->
+      <section class="container section reveal" aria-labelledby="destacados-title">
+        <div class="toolbar">
+          <h2 id="destacados-title" class="title-lg m-0">Destacados</h2>
+        </div>
+        <div class="grid three" id="destacados-skaters" aria-label="Patinadores destacados"></div>
+        <div class="grid three mt-6" id="destacados-parches" aria-label="Parches destacados"></div>
+        <div class="grid three mt-6" id="destacados-spots" aria-label="Spots destacados"></div>
+      </section>
+
+      <!-- CTA + Newsletter -->
+      <section class="container section reveal cta">
+        <div class="glass card">
+          <h2 class="title-lg">¿Listo para rodar?</h2>
+          <p>Suscríbete para recibir rutas, eventos y novedades.</p>
+          <form class="newsletter" aria-label="Suscripción al boletín" onsubmit="return false">
+            <label class="visually-hidden" for="email-news">Correo electrónico</label>
+            <input id="email-news" type="email" placeholder="tu@email.com" required />
+            <button class="btn primary" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Rollemos Pues!!!</strong>
+          <p class="muted">Hecho con amor por la comunidad. Contenido de ejemplo.</p>
+        </div>
+        <nav aria-label="Redes">
+          <a class="icon-link" href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a class="icon-link" href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a>
+          <a class="icon-link" href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+        </nav>
+      </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+      <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+  </html>

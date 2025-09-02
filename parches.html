@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rollemos Pues!!! — Parches</title>
+    <meta name="description" content="Directorio de parches y equipos de patinaje." />
+    <meta property="og:title" content="Parches — Rollemos Pues!!!" />
+    <meta property="og:description" content="Encuentra tu parche ideal para rodar." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/img/placeholders/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/img/placeholders/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <nav class="navbar container" role="navigation" aria-label="Navegación principal">
+        <a class="brand" href="index.html" aria-label="Inicio">Rollemos Pues!!!</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+          <i class="ri-menu-3-line" aria-hidden="true"></i>
+        </button>
+        <div id="nav-menu" class="nav-menu">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="skaters.html">Patinadores</a>
+          <a class="nav-link active" aria-current="page" href="parches.html">Parches</a>
+          <a class="nav-link" href="spots.html">Spots</a>
+          <a class="nav-link" href="galeria.html">Galería</a>
+          <button id="theme-toggle" class="btn ghost" aria-label="Cambiar tema"><i class="ri-contrast-line"></i></button>
+          <div class="nav-search" role="search">
+            <label class="visually-hidden" for="nav-search-input">Buscar</label>
+            <input id="nav-search-input" type="search" placeholder="Buscar..." aria-label="Buscar" />
+            <button class="btn ghost" id="nav-search-btn" aria-label="Ejecutar búsqueda">
+              <i class="ri-search-line" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+      <nav class="breadcrumb container" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li aria-current="page">Parches</li>
+        </ol>
+      </nav>
+
+      <section class="container section">
+        <h1 class="title-lg">Directorio de parches</h1>
+        <div class="toolbar glass" role="region" aria-label="Filtros de parches">
+          <div class="filters-grid">
+            <div>
+              <label for="p-text">Buscar</label>
+              <input id="p-text" type="search" placeholder="Nombre, ciudad..." />
+            </div>
+            <div>
+              <label for="p-ciudad">Ciudad</label>
+              <select id="p-ciudad"><option value="">Todas</option></select>
+            </div>
+            <div>
+              <label for="p-disciplina">Disciplina</label>
+              <select id="p-disciplina">
+                <option value="">Todas</option>
+                <option value="street">Street</option>
+                <option value="park">Park</option>
+                <option value="slalom">Slalom</option>
+                <option value="downhill">Downhill</option>
+              </select>
+            </div>
+            <div class="self-end">
+              <button id="p-aplicar" class="btn primary">Aplicar filtros</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="parches-list" class="grid three mt-4" aria-label="Resultados"></div>
+      </section>
+    </main>
+
+    <div id="modal-parche" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title-parche">
+      <div class="modal-dialog">
+        <button class="modal-close" aria-label="Cerrar"><i class="ri-close-line"></i></button>
+        <div class="modal-body">
+          <!-- Detalle inyectado por JS -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Rollemos Pues!!!</strong>
+          <p class="muted">Encuentra tu equipo para rodar.</p>
+        </div>
+        <nav aria-label="Redes">
+          <a class="icon-link" href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a class="icon-link" href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a>
+          <a class="icon-link" href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+        </nav>
+      </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+      <i class="ri-arrow-up-line"></i>
+    </button>
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/parches.js" defer></script>
+  </body>
+  </html>

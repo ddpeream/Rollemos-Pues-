@@ -1,0 +1,39 @@
+/* Reset moderno */
+*, *::before, *::after { box-sizing: border-box; }
+html:focus-within { scroll-behavior: smooth; }
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; }
+img, picture { max-width: 100%; display: block; }
+input, button, textarea, select { font: inherit; }
+
+/* Base */
+body { background: radial-gradient(1200px 800px at 80% -10%, rgba(77,215,208,.08), transparent), radial-gradient(1200px 800px at 10% -20%, rgba(210,107,255,.06), transparent), var(--color-bg); color: var(--color-text); font-family: "Inter", system-ui, sans-serif; line-height: 1.6; font-size: 16px; }
+
+/* Tipos */
+h1, h2, h3, h4 { font-family: "Poppins", system-ui, sans-serif; }
+p { color: var(--color-text); }
+.muted { color: var(--color-muted); }
+
+/* Microinteracciones por defecto */
+a, button { transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition); }
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: #2bbdb5; }
+
+/* Reveal con IntersectionObserver */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity 240ms ease, transform 240ms ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Componentes específicos */
+.footer-grid { gap: 1rem; }
+.icon { font-size: 1.75rem; color: var(--color-primary); }
+.newsletter { display:flex; gap:.5rem; margin-top:.5rem; }
+@media (max-width: 576px){ .newsletter { flex-direction: column; } }
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Utilidades locales */
+.cta .card { text-align: center; }
+.footer-grid nav { display:flex; gap:.25rem; }
