@@ -1,16 +1,9 @@
 "use strict";
 
 (function(){
-  const { qs, qsa, on } = window.RP;
+  const { qs, qsa, on, getJSONCached } = window.RP;
 
-  // Mock ligero en cliente para demo
-  const images = Array.from({ length: 18 }).map((_,i)=> ({
-    id: i+1,
-    url: `https://images.unsplash.com/photo-15${20+i}975916090-3105956dac38?q=80&w=${900 + (i%3)*200}&auto=format&fit=crop`,
-    tag: ["street","park","eventos","competencias","entrenos"][i%5],
-    caption: "Foto de ejemplo en rueda"
-  }));
-
+  let images = [];
   const notes = Array.from({ length: 6 }).map((_,i)=> ({
     id: i+1,
     title: `Crónica ${i+1}`,
@@ -18,7 +11,7 @@
     tag: ["eventos","competencias","entrenos"][i%3]
   }));
 
-  const state = { tag: "", filtered: images, index: 0 };
+  const state = { tag: "", filtered: [], index: 0 };
 
   function render(){
     const m = qs("#masonry");
@@ -85,5 +78,20 @@
     }));
   }
 
-  document.addEventListener("DOMContentLoaded", ()=> { render(); bindFilters(); bindLightbox(); });
+  async function init(){
+    try {
+      images = await getJSONCached("data/galeria.json");
+      state.filtered = images;
+      render();
+      bindFilters();
+      bindLightbox();
+    } catch {
+      // fallback simple por si no carga
+      images = [];
+      state.filtered = [];
+      render();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
 })();

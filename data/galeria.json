@@ -1,0 +1,9 @@
+[
+  { "id": 1, "url": "assets/img/galery/chica-patinando.avif", "tag": "eventos", "caption": "Chica patinando — evento en Medellín" },
+  { "id": 2, "url": "assets/img/galery/chica-patinando1.avif", "tag": "street", "caption": "Street ride — centro" },
+  { "id": 3, "url": "assets/img/galery/chica-patinando2.jpeg", "tag": "entrenos", "caption": "Entreno matutino" },
+  { "id": 4, "url": "assets/img/galery/chica-patinando3.jpg", "tag": "park", "caption": "Sesión en park" },
+  { "id": 5, "url": "assets/img/galery/chica-patinando4.jpg", "tag": "street", "caption": "Rodada urbana" },
+  { "id": 6, "url": "assets/img/galery/chica-patinando5.jpg", "tag": "eventos", "caption": "Evento comunitario" },
+  { "id": 7, "url": "assets/img/galery/chica-patinando6.jpg", "tag": "competencias", "caption": "Competencia local" }
+]
