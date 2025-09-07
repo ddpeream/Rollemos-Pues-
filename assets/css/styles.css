@@ -37,3 +37,321 @@ a:hover { color: #2bbdb5; }
 /* Utilidades locales */
 .cta .card { text-align: center; }
 .footer-grid nav { display:flex; gap:.25rem; }
+
+/* About section */
+.about-section { text-align: left; }
+.team-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+.team-member h4 { margin-bottom: 0.25rem; font-weight: 600; }
+.team-member .muted { margin-bottom: 0.5rem; font-size: 0.9rem; }
+.team-member .small { font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary); }
+.link-subtle { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease; }
+.link-subtle:hover { color: var(--accent); }
+
+@media (min-width: 768px) {
+  .team-grid { flex-direction: row; gap: 2rem; }
+  .team-member { flex: 1; }
+}
+
+/* About page styles */
+.team-profile { text-align: center; padding: 2rem; }
+.team-avatar { margin-bottom: 1.5rem; display: flex; justify-content: center; }
+.placeholder-avatar { 
+  width: 80px; height: 80px; 
+  background: var(--glass-bg); 
+  border-radius: 50%; 
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; color: var(--accent);
+  border: 2px solid var(--glass-border);
+}
+.team-role { 
+  color: var(--accent); 
+  font-weight: 500; 
+  margin-bottom: 1rem; 
+  font-size: 0.95rem;
+}
+.team-skills { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+  justify-content: center; 
+  margin-top: 1.5rem; 
+}
+.list-elegant { 
+  list-style: none; 
+  padding: 0; 
+}
+.list-elegant li { 
+  padding: 0.5rem 0; 
+  border-bottom: 1px solid var(--glass-border); 
+}
+.list-elegant li:last-child { border-bottom: none; }
+.cta-section { text-align: center; }
+
+@media (min-width: 768px) {
+  .cta-section { text-align: left; }
+  .cta-section .text-center { text-align: center; }
+}
+
+/* Team Showcase - Modern & Innovative Design */
+.team-showcase {
+  display: grid;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, var(--accent-alpha), transparent);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  animation: rotate 20s linear infinite;
+}
+
+.team-card:hover::before {
+  opacity: 0.1;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.team-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-photo {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  padding: 4px;
+  transition: all 0.4s ease;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-photo img {
+  transform: scale(1.1);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+.role-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.9);
+  color: var(--text-primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.floating-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--accent);
+  backdrop-filter: blur(10px);
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.floating-icon:nth-child(1) {
+  top: 20%;
+  right: 10%;
+  animation-delay: var(--delay, 0s);
+}
+
+.floating-icon:nth-child(2) {
+  top: 60%;
+  right: 5%;
+  animation-delay: var(--delay, 1s);
+}
+
+.floating-icon:nth-child(3) {
+  top: 80%;
+  right: 25%;
+  animation-delay: var(--delay, 2s);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.team-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.team-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.team-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.skill-constellation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-orb {
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-orb.primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+}
+
+.skill-orb.secondary {
+  background: var(--glass-bg);
+  color: var(--accent);
+  border: 2px solid var(--accent-alpha);
+}
+
+.skill-orb.accent {
+  background: linear-gradient(135deg, var(--accent-alpha), transparent);
+  color: var(--accent);
+  border: 1px solid var(--accent-alpha);
+}
+
+.skill-orb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .team-card {
+    grid-template-columns: 1fr 2fr;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .team-content {
+    text-align: left;
+  }
+  
+  .team-name {
+    text-align: left;
+  }
+  
+  .skill-constellation {
+    justify-content: flex-start;
+  }
+  
+  .carlos-card {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .carlos-card .team-visual {
+    order: 2;
+  }
+  
+  .carlos-card .team-content {
+    order: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-photo {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .floating-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+}
