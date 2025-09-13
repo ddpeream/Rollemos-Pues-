@@ -35,6 +35,17 @@ function setupNav() {
 		qs(".nav-menu")?.classList.remove("open");
 		qs(".nav-toggle")?.setAttribute("aria-expanded", "false");
 	}));
+	
+	// Marcar página activa
+	const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+	qsa(".nav-link").forEach((link) => {
+		const href = link.getAttribute('href');
+		if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+			link.classList.add('active');
+		} else {
+			link.classList.remove('active');
+		}
+	});
 }
 
 // Back to top
@@ -128,6 +139,33 @@ function setupNewsletter() {
 	});
 }
 
+// Búsqueda simple
+function setupSearch() {
+	const btn = qs("#nav-search-btn");
+	const input = qs("#nav-search-input");
+	if (!btn || !input) return;
+	
+	const performSearch = () => {
+		const query = input.value.trim();
+		if (!query) {
+			showToast("Escribe algo para buscar");
+			return;
+		}
+		// Simulación de búsqueda - puedes expandir esto
+		showToast(`Buscando: "${query}"`);
+		// Aquí podrías redirigir a una página de resultados
+		// window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+	};
+	
+	on(btn, "click", performSearch);
+	on(input, "keypress", (e) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			performSearch();
+		}
+	});
+}
+
 // Init común
 document.addEventListener("DOMContentLoaded", () => {
 	setupNav();
@@ -136,6 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	setupHeaderShadow();
 	setupCarousel();
 	setupNewsletter();
+	setupSearch();
+	setupTheme();
 		// Poblar destacados en index si existen contenedores
 		(async ()=>{
 			try {
@@ -156,7 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			} catch {}
 		})();
-			setupTheme();
 });
 
 // Exponer utilidades para otros módulos
